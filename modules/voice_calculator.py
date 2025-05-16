@@ -1,15 +1,12 @@
 # modules/voice_calculator.py
 
-import speech_recognition as sr
+from simpleeval import simple_eval
 
-# מילון להמרת מילים למספרים בעברית
 hebrew_numbers = {
     "אחד": "1", "שתיים": "2", "שניים": "2", "שלוש": "3", "ארבע": "4", "חמש": "5",
-    "שש": "6", "שבע": "7", "שמונה": "8", "תשע": "9", "עשר": "10",
-    "אפס": "0"
+    "שש": "6", "שבע": "7", "שמונה": "8", "תשע": "9", "עשר": "10", "אפס": "0"
 }
 
-# מילון פעולות חשבוניות
 operations = {
     "פלוס": "+", "ועוד": "+", "מינוס": "-", "פחות": "-",
     "כפול": "*", "פעמים": "*", "חלקי": "/", "לחלק": "/"
@@ -22,21 +19,16 @@ def convert_hebrew_expression_to_math(text):
         text = text.replace(word, symbol)
     return text
 
-def listen_and_calculate():
-    recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("🔊 דבר את הביטוי החשבוני בעברית (למשל: חמש כפול שתיים):")
-        audio = recognizer.listen(source)
-
+def calculate_expression(expression):
+    """
+    מחשב את הביטוי המתמטי המומר בצורה בטוחה.
+    """
     try:
-        text = recognizer.recognize_google(audio, language="he-IL")
-        print(f"שמעת: {text}")
-        expr = convert_hebrew_expression_to_math(text)
-        print(f"מתורגם ל: {expr}")
-        result = eval(expr)
-        print(f"✅ תוצאה: {result}")
+        result = simple_eval(expression)
+        return f"התוצאה היא: {result}"
     except Exception as e:
-        print("⚠️ שגיאה:", e)
+        return "⚠️ לא הצלחתי לחשב את הביטוי. ודא שהוא תקין."
 
-# דוגמה להרצה
-# listen_and_calculate()
+def calculate_from_text(text):
+    expr = convert_hebrew_expression_to_math(text)
+    return calculate_expression(expr)

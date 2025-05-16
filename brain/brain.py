@@ -7,7 +7,7 @@ from modules.weather_functions import get_weather, get_forecast
 from modules.wWikipedia import get_wikipedia_info
 from modules.NEWS14 import get_newsflashes
 from modules.Motivation import get_motivational_quote
-from modules.voice_calculator import convert_hebrew_expression_to_math
+from modules.voice_calculator import calculate_from_text
 from modules.chat_gpt import chat_with_gpt
 from modules.HELP_COMMAND import get_help_text
 
@@ -49,12 +49,12 @@ def process_command(command: str) -> str:
         return "סליחה, ניגון ביוטיוב טרם מומש."
 
     if "כמה זה" in command or "תחשב" in command:
-        try:
-            expr = convert_hebrew_expression_to_math(command)
-            result = eval(expr)
-            return f"התוצאה היא: {result}"
-        except Exception:
-            return "לא הצלחתי לחשב את הביטוי שניתן."
+        # Check if the command contains a mathematical expression
+        if any(op in command for op in ["פלוס", "מינוס", "כפול", "חלקי", "ועוד", "פחות"]):
+            # Simple implementation: remove the trigger words and evaluate the rest
+                    return calculate_from_text(command)
+
+
 
     if "שוחח עם gpt" in command or "דבר איתי" in command or "צ'אט" in command:
         prompt = command.replace("שוחח עם gpt", "").replace("דבר איתי", "").replace("צ'אט", "").strip()
