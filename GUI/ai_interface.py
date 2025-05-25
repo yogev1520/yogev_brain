@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ייבוא מודולים נדרשים
 # ai_interface.py
-
+from modules.jokes_module import tell_joke
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
 from PIL import Image, ImageTk
@@ -96,6 +96,13 @@ def listen_and_respond():
         speak(response)
 
     threading.Thread(target=thread_func).start()
+
+def show_joke():
+    joke = tell_joke()
+    append_chat(f"😂 בדיחה: {joke}\n\n")
+    save_log(f"😂 בדיחה: {joke}")
+    speak(joke)
+
 
 # פונקציה לשליחת פקודה מקלט הטקסט (שליחה רגילה)
 def send_command():
