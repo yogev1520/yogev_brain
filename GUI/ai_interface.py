@@ -14,7 +14,7 @@ import speech_recognition as sr
 import threading
 
 from brain.brain import process_command
-from modules.HELP_COMMAND import get_help_text  # כאן תיקנתי את הייבוא
+from modules.help import get_help_text  # כאן תיקנתי את הייבוא
 
 # יצירת תיקיית לוגים אם לא קיימת
 log_dir = "logs"

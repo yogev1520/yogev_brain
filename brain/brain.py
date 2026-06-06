@@ -1,6 +1,6 @@
 from brain.core import think
 from brain.executor import run
-
+from modules.help import get_help_text
 
 def process_command(user_input: str):
     """
