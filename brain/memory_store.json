@@ -1,0 +1,134 @@
+[
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "מה מזג האוויר בתל אביב?"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "You were unable to retrieve the current weather data."
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "מה מזג האוויר בתל אביב?"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "לאחראי, אני לא יכול להציג לך את נתוני מזג האוויר, שכן הנתונים אינם תוצאה של כלי מדידה."
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "הטמפרטורה בתל אביב כעת היא 25.1°C, לחות 75% ורוח של 4.73 קמ\"ש."
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "מזג האוויר בתל אביב:\n\n- טמפרטורה: 25.1°C\n- מזג השמיים: בהיר\n- לחות: 75%\n- רוח: 4.73 קמ\"ש"
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "הטמפרטורה בתל אביב היא 24.54°C, עם לחות 76% ורוח של 4.73 קמ\"ש, תחת שמים בהירים."
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "התוצאות נראות כך:\n\nהטמפרטורה בטל אביב היא 24.54°C, שמיים בהירים, עם לחות מהודקת של 76% ורוח של 4.73 קמ\"ש."
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "The current temperature in Tel Aviv is 24.54°C, with clear skies and 76% humidity.",
+      "raw_results": [
+        {
+          "type": "text",
+          "content": "הטמפרטורה כעת בTel Aviv היא 24.54°C, שמיים בהירים. לחות: 76%, רוח: 4.73 קמ\"ש."
+        }
+      ]
+    }
+  },
+  {
+    "input": "מה מזג האוויר בתל אביב?",
+    "plan": {
+      "plan": [
+        {
+          "tool": "weather",
+          "input": "Tel Aviv"
+        }
+      ]
+    },
+    "result": {
+      "done": true,
+      "answer": "Based on the results, I summarize the tool results as follows:\n\nThe current temperature in Tel Aviv is 24.54°C, with clear skies, 76% humidity, and a wind speed of 4.73 kilometers per hour.",
+      "raw_results": [
+        {
+          "type": "text",
+          "content": "הטמפרטורה כעת בTel Aviv היא 24.54°C, שמיים בהירים. לחות: 76%, רוח: 4.73 קמ\"ש."
+        }
+      ]
+    }
+  }
+]
